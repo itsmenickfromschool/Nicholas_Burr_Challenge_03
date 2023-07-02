@@ -1,5 +1,20 @@
 // Assignment code here
-prompt
+alert("Hello, This App will generate a secure password.\nClick through prompts to determine your password criteria");
+var passwordLength = prompt("Enter the desired length of your password.\n it can be between 8 or 128 characters");
+
+const lengthCheck = function(){
+  
+  if(passwordLength < 8 || passwordLength > 128){
+    alert("Oops, your password needs to be between 8 and 128 characters.\n Try again!")
+    passwordLength = prompt("Enter the desired length of your password.\n it can be between 8 or 128 characters");
+    lengthCheck();
+  } else {alert("Thanks your password will be " + passwordLength + " characters.")}
+}
+lengthCheck();
+
+
+
+
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
