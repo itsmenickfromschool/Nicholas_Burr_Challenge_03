@@ -1,35 +1,40 @@
 // Assignment code here
-alert("Hello, This App will generate a secure password.\nClick through prompts to determine your password criteria");
-var passwordLength = prompt("Enter the desired length of your password.\n it can be between 8 or 128 characters");
+alert('Hello, This App will generate a secure password.\nClick through prompts to determine your password criteria');
+var passwordLength = prompt('Enter the desired length of your password.\n it can be between 8 or 128 characters');
+var lowerCase = ['q','w','e','r','t','y','u','i','o','p','a','s','d','f','g','h','j','k','l','z','x','c','v','b','n','m']
+var upperCase = ['Q','W','E','R','T','Y','U','I','O','P','A','S','D','F','G','H','J','K','L','Z','X','C','V','B','N','M'] 
 
+
+console.log(upperCase);
 const lengthCheck = function(){
   
   if(passwordLength < 8 || passwordLength > 128){
-    alert("Oops, your password needs to be between 8 and 128 characters.\n Try again!")
-    passwordLength = prompt("Enter the desired length of your password.\n it can be between 8 or 128 characters");
+    alert('Oops, your password needs to be between 8 and 128 characters.\n Try again!')
+    passwordLength = prompt('Enter the desired length of your password.\n it can be between 8 or 128 characters');
     lengthCheck();
-  } else {alert("Thanks your password will be " + passwordLength + " characters.")}
+  } else {alert('Thanks your password will be ' + passwordLength + ' characters.')}
 }
 lengthCheck();
+// variable that holds charType
 
 
 
 
 
 // Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
+var generateBtn = document.querySelector('#generate');
 
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  var passwordText = document.querySelector('#password');
 
   passwordText.value = password;
 
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener('click', writePassword);
  /* Psuedocode 
   On the click of event listener 
     I want to prompt the user about passwords
