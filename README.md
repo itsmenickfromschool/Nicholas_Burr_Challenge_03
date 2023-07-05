@@ -1,18 +1,22 @@
 # Nicholas_Burr_Challenge_03
-Challenge 03 
 
-  GIVEN I need a new, secure password
-WHEN I click the button to generate a password
-THEN I am presented with a series of prompts for password criteria
-WHEN prompted for password criteria
-THEN I select which criteria to include in the password
-WHEN prompted for the length of the password
-THEN I choose a length of at least 8 characters and no more than 128 characters Done!! 
-WHEN asked for character types to include in the password
-THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
-WHEN I answer each prompt
-THEN my input should be validated and at least one character type should be selected
-WHEN all prompts are answered
-THEN a password is generated that matches the selected criteria
-WHEN the password is generated
-THEN the password is either displayed in an alert or written to the page
+## Description
+My motivation for making this app was to learn some basic javascript skills. I built this simple app to show how you can use javascript features to generate random strings. During the process I learned more about variables, arrays, functions, objects, and methods. It solves the problem of coming up with secure passwords. It is rather useful, lots of people tend to just use birthdays, pet names, or something similar. This is not secure. A random sequence of characters is much harder to figure out.
+
+## Installation
+N/A
+
+## Usage
+
+In order to use this app you click the red generate button and follow the prompts that will come up in the pop-up window. Make sure to follow the instructions with detail!
+![Password Generator](./assets/images/passwordGenerator.jpg)
+
+## Credits
+
+For this Challenge I worked on my own. I referenced some javascript from [w3schools](https://www.w3schools.com/) I also referenced special characters from [OWASP](https://owasp.org/www-community/password-special-characters). The Javascript code is my own in addition to the starter code, which was provided by EDX2U for the fullstack web development coding bootcamp.
+
+## License
+
+Refer to the Repo for the license.
+
+
