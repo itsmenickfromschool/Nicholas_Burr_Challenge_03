@@ -7,7 +7,7 @@ var numeric = ['1','2','3','4','5','6','7','8','9','0'];
 // var specialCharacters = [' ','!','"','#','$','%','&','(',')','*','+',',','-','.','/',':',';','<','=','>','?','@','[','',']','^','_','`','{','|','}','~']; 
 var specialCharacters = " !\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
 specialCharacters = Array.from(specialCharacters);
-specialCharacters.push("\");
+specialCharacters.push("\\");
 console.log(specialCharacters);
 
 console.log(upperCase);
