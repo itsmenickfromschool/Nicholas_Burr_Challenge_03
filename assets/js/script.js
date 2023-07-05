@@ -2,8 +2,13 @@
 alert('Hello, This App will generate a secure password.\nClick through prompts to determine your password criteria');
 var passwordLength = prompt('Enter the desired length of your password.\n it can be between 8 or 128 characters');
 var lowerCase = ['q','w','e','r','t','y','u','i','o','p','a','s','d','f','g','h','j','k','l','z','x','c','v','b','n','m']
-var upperCase = ['Q','W','E','R','T','Y','U','I','O','P','A','S','D','F','G','H','J','K','L','Z','X','C','V','B','N','M'] 
-
+var upperCase = ['Q','W','E','R','T','Y','U','I','O','P','A','S','D','F','G','H','J','K','L','Z','X','C','V','B','N','M']
+var numeric = ['1','2','3','4','5','6','7','8','9','0'];
+// var specialCharacters = [' ','!','"','#','$','%','&','(',')','*','+',',','-','.','/',':',';','<','=','>','?','@','[','',']','^','_','`','{','|','}','~']; 
+var specialCharacters = " !\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
+specialCharacters = Array.from(specialCharacters);
+specialCharacters.push("\");
+console.log(specialCharacters);
 
 console.log(upperCase);
 const lengthCheck = function(){
@@ -15,6 +20,7 @@ const lengthCheck = function(){
   } else {alert('Thanks your password will be ' + passwordLength + ' characters.')}
 }
 lengthCheck();
+
 // variable that holds charType
 
 
