@@ -1,25 +1,100 @@
 // Assignment code here
-alert('Hello, This App will generate a secure password.\nClick through prompts to determine your password criteria');
-var passwordLength = prompt('Enter the desired length of your password.\n it can be between 8 or 128 characters');
+// alert('Hello, This App will generate a secure password.\nClick through prompts to determine your password criteria');
+// var passwordLength = prompt('Enter the desired length of your password.\n it can be between 8 or 128 characters');
 var lowerCase = ['q','w','e','r','t','y','u','i','o','p','a','s','d','f','g','h','j','k','l','z','x','c','v','b','n','m']
 var upperCase = ['Q','W','E','R','T','Y','U','I','O','P','A','S','D','F','G','H','J','K','L','Z','X','C','V','B','N','M']
-var numeric = ['1','2','3','4','5','6','7','8','9','0'];
-// var specialCharacters = [' ','!','"','#','$','%','&','(',')','*','+',',','-','.','/',':',';','<','=','>','?','@','[','',']','^','_','`','{','|','}','~']; 
-var specialCharacters = " !\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
-specialCharacters = Array.from(specialCharacters);
-specialCharacters.push("\\");
-console.log(specialCharacters);
+var numericCharacters = ['1','2','3','4','5','6','7','8','9','0'];
+var specialCharacters = [' ','!','"','#','$','%','&','(',')','*','+',',','-','.','/',':',';','<','=','>','?','@','[','',']','^','_','`','{','|','}','~'];
+var passwordArray = []
 
-console.log(upperCase);
-const lengthCheck = function(){
+/* I had a frustrating time trying to add a backslash to the special characters because In JavaScript \ is an escape character 
+and I see it says to add two \\ to render one but it's not a requirement to have it in an array so I'm skipping it and using what I have have defined already */
+
+// var specialCharacters = [' ','!','"','#','$','%','&','(',')','*','+',',','-','.','/',':',';','<','=','>','?','@','[','\\',']','^','_','`','{','|','}','~']; 
+// var specialCharacters = " !\"#$%&'()*+,-./:;<=>?@[]^_`{|}~";
+// specialCharacters = Array.from(specialCharacters);
+// specialCharacters.push("\\");
+
+// Putting this following code inside the generate password function
+
+// console.log(specialCharacters);
+
+// console.log(upperCase);
+// const lengthCheck = function(){
   
-  if(passwordLength < 8 || passwordLength > 128){
-    alert('Oops, your password needs to be between 8 and 128 characters.\n Try again!')
-    passwordLength = prompt('Enter the desired length of your password.\n it can be between 8 or 128 characters');
-    lengthCheck();
-  } else {alert('Thanks your password will be ' + passwordLength + ' characters.')}
+//   if(passwordLength < 8 || passwordLength > 128){
+//     alert('Oops, your password needs to be between 8 and 128 characters.\n Try again!')
+//     passwordLength = prompt('Enter the desired length of your password.\n it can be between 8 or 128 characters');
+//     lengthCheck();
+//   } else {alert('Thanks your password will be ' + passwordLength + ' characters.')}
+// }
+// lengthCheck();
+
+// if(confirm('Do you want to use lowercase characters in your password?') === true) {
+//   var passwordArray = passwordArray.concat(lowerCase);
+//   };
+// if(confirm('Do you want to use uppercase characters in your password?') === true) {
+//   var passwordArray = passwordArray.concat(upperCase);
+// };
+// if(confirm('Do you want to use numeric characters in your password?') === true){
+//   var passwordArray = passwordArray.concat(numericCharacters);
+// };
+// if(confirm('Do you want to use special characters in your password?') === true){
+//   var passwordArray = passwordArray.concat(specialCharacters);
+// };
+// alert('Thanks for selecting which characters to use.\n Exit this popup and press Generate to get your password!')
+// console.log(passwordArray);
+
+function generatePassword() {
+  alert('Hello, This App will generate a secure password.\nClick through prompts to determine your password criteria');
+  var passwordPrompt = prompt('Enter the desired length of your password as a number. \n it can be between 8 or 128 characters\n Example: 23');
+  passwordLength = parseInt(passwordPrompt);
+  const lengthCheck = function(){
+    
+    if(passwordLength < 8 || passwordLength > 128){
+      alert('Oops, your password needs to be between 8 and 128 characters, and a number!.\n Try again!')
+      passwordLength = prompt('Enter the desired length of your password.\n it can be between 8 or 128 characters\n Example:19');
+      lengthCheck();
+    } 
+    else {alert('Thanks your password will be ' + passwordLength + ' characters.')}
+  }
+
+  // var typeCheck = function() { 
+  // if (passwordLength typeof !== number){
+  //     prompt('Oops, Try again and enter a number!/n example : 3');
+  //     typeCheck();
+  //   }
+  // }
+  // typeCheck();
+  lengthCheck();
+var lowerCase = ['q','w','e','r','t','y','u','i','o','p','a','s','d','f','g','h','j','k','l','z','x','c','v','b','n','m']
+var upperCase = ['Q','W','E','R','T','Y','U','I','O','P','A','S','D','F','G','H','J','K','L','Z','X','C','V','B','N','M']
+var numericCharacters = ['1','2','3','4','5','6','7','8','9','0'];
+var specialCharacters = [' ','!','"','#','$','%','&','(',')','*','+',',','-','.','/',':',';','<','=','>','?','@','[','',']','^','_','`','{','|','}','~'];
+var passwordArray = []
+passwordFinal = ""
+  
+  if(confirm('Do you want to use lowercase characters in your password?') === true) {
+    var passwordArray = passwordArray.concat(lowerCase);
+    };
+  if(confirm('Do you want to use uppercase characters in your password?') === true) {
+    var passwordArray = passwordArray.concat(upperCase);
+  };
+  if(confirm('Do you want to use numeric characters in your password?') === true){
+    var passwordArray = passwordArray.concat(numericCharacters);
+  };
+  if(confirm('Do you want to use special characters in your password?') === true){
+    var passwordArray = passwordArray.concat(specialCharacters);
+  };
+  alert('Thanks for selecting which characters to use.\n Exit this popup and press Generate to get your password!')
+  console.log(passwordArray);
+for (var i=0; i < passwordLength; i++){
+  passwordFinal = passwordFinal.concat(passwordArray[Math.floor(Math.random() * passwordArray.length)]);
 }
-lengthCheck();
+  password = passwordFinal
+  return password
+
+}
 
 // variable that holds charType
 
